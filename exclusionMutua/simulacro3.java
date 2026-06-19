@@ -16,7 +16,5 @@ turnoSeleccionado = false;
                                 while(0!=1)
                                 seleccionTurno(0);
                                 if(!turnoSeleccionado)
-                                ... deadlock
-// Como se observa en la traza, hay un deadlock, por tanto no se cumple GE,
-// en conclusión, no se resuelve el problema de la exclusión mutua, en este caso
-// para N=2, por tanto no se cumple para todo N.
+                                
+// Como se observa en la traza, hay un deadlock, por lo tanto no se cumple GE, ni EM.

@@ -1,4 +1,4 @@
-thread Auto { // acquire por cada estacion porque paro en cada una
+thread Auto {
     estacion[0].acquire();
     mutexA.acquire();
     mirobot = id_robot;
@@ -8,27 +8,25 @@ thread Auto { // acquire por cada estacion porque paro en cada una
     estacion[1].acquire();
 
     for (i rango[0,5]) {
-        llegada[i].release()
-        termina[i].acquire()
-        estacion[i+1].acquire()
-        // Manejo prox. estacion
-        estacion[i].release()
+        llegada[i].release();
+        termina[i].acquire();
+        estacion[i+1].acquire();
+        estacion[i].release();
     }
     esperaBajar[mirobot].release();
-    estacion[5].release()
+    estacion[5].release();
 }
 
 thread Maquina (id) {
     while (true) {
         llegada[id].acquire();
-        // limpia
         termina[id].release();
     }
 }
 
 global int id_robot = null;
 
-thread Robot (id) { // se consume el id de la estacion o el robot que sea
+thread Robot (id) {
     while (true) {
         estacion[0].release();
         mutexR.acquire();
@@ -36,10 +34,6 @@ thread Robot (id) { // se consume el id de la estacion o el robot que sea
         mutexA.release();
         esperarAuto[id].acquire();
         esperarSubirRobot[id].release();
-        // limpia
         esperaBajar[id].acquire();
     }
 }
-
-// c semaforo robot y estacion fuertes
-

@@ -1,4 +1,4 @@
-T0                              T1
+T0                              T1                             Estado
 //SNC
                                 //SNC
 soyprimero = anotarse(0);
@@ -8,7 +8,7 @@ esperando[0] = True;
 lee: cantidadEsperando;
 suma: cantidadEsperando+1:;
                                 cantidadEsperando++;
-escritura: cantidadEsperando;                                   cantidadEsperando=1
+escritura: cantidadEsperando;                                  cantidadEsperando=1
 return True
                                 return True
 if (True) llamarProximo();
@@ -22,7 +22,7 @@ if (True) res=1;
 if (True) res=0;
                                 if (True) res=0;
 proximo=0;
-                                proximo=0;                      proximo=0
+                                proximo=0;                     proximo=0
 while(!0==0);
                                 while(!0==1);
 //SC
@@ -32,9 +32,4 @@ cantidadEsperando--;                                            cantidadEsperand
 return True;
 if (False) llamarProximo();                                     proximo=0
 
-// Como se observa en la traza, T1 se queda en deadlock. Por tanto no se cumple
-// la propiedad de Garantia de Entrada, en conclusión no se resuelve el problema
-// de la exclusión mutua.
-
-
-
+// Como se observa en la traza, hay un deadlock, por lo tanto no se cumple GE, ni EM.
