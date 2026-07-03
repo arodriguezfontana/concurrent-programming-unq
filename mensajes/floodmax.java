@@ -1,3 +1,4 @@
+package mensajes;
 // A
 Process Nodo(List<Channel> vecinos, Channel myChannel, Channel timer) {
     Channel myChannelT = new Channel();

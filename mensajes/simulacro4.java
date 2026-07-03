@@ -1,3 +1,4 @@
+package mensajes;
 // A
 global Channel AtoP = new Channel();
 global Channel PtoS = new Channel();
